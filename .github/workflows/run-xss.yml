@@ -1,0 +1,15 @@
+name: Run XSS installer
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run installer script
+        run: |
+          chmod +x xss0rv5-install.sh
+          ./xss0rv5-install.sh
